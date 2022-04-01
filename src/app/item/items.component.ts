@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 
-import { Item } from './item'
-import { ItemService } from './item.service'
+import {Item} from './item'
+import {ItemService} from './item.service'
 
 @Component({
   selector: 'ns-items',
@@ -10,9 +10,11 @@ import { ItemService } from './item.service'
 export class ItemsComponent implements OnInit {
   items: Array<Item>
 
-  constructor(private itemService: ItemService) {}
+  constructor(private itemService: ItemService) {
+  }
 
   ngOnInit(): void {
     this.items = this.itemService.getItems()
   }
+
 }

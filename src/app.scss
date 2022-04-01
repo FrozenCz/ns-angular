@@ -11,7 +11,13 @@ NativeScript core theme at https://github.com/nativescript/theme
 The imported CSS rules must precede all other types of rules.
 */
 @import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/default.css';
+@import '@nativescript/theme/css/forest.css';
+
+
+
+
+
+
 
 /* Place any CSS rules you want to apply on both iOS and Android here.
 This is where the vast majority of your CSS code goes. */
@@ -22,4 +28,8 @@ The following CSS rule changes the font size of all Buttons that have the
 */
 Button.-primary {
   font-size: 18;
+}
+
+.btn {
+  background-color: lime;
 }
