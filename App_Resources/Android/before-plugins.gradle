@@ -9,6 +9,7 @@ project.ext {
   // androidXMultidex = "2.0.1"
   // androidXTransition = "1.4.1"
   // androidXViewPager = "1.0.0"
+    googlePlayServicesVersion = "16.+"
 
   // useKotlin = true
   // kotlinVersion = "1.6.0"

@@ -23,6 +23,7 @@ The theme also provides a set of helper class names such as p-20, h1, h2, and te
 You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
 -->
 <GridLayout>
+
   <ListView [items]="items">
     <ng-template let-item="item">
       <StackLayout [nsRouterLink]="['/item', item.id]">

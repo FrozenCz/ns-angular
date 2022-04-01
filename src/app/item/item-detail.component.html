@@ -1,11 +1,28 @@
 <ActionBar title="Details"></ActionBar>
 
 <FlexboxLayout flexDirection="column">
-    <FlexboxLayout class="m-15">
-        <Label class="h2" [text]="item.id + 'fajneds'"></Label>
-        <Label class="h2" [text]="item.name"></Label>
-        <label [text]="item.name"></label>
-        <Button text="Button" class="btn" (tap)="onButtonTap()"></Button>
-    </FlexboxLayout>
-    <Label class="h4 m-15" [text]="item.role"></Label>
+    <AbsoluteLayout>
+        <label [text]="'Počet bodů' + points"></label>
+        <Button text="Sens" class="btn primary start" (tap)="regSens()" *ngIf="!gravitySensorListener"></Button>
+        <Button text="" class="btn point" [top]="point.top" [left]="point.left" *ngIf="point"></Button>
+        <Button text="" class="btn hole" *ngFor="let hole of holes" (tap)="youCatchMe()" [top]="hole.top" [left]="hole.left"></Button>
+        <Button text="" class="btn ball" (tap)="youCatchMe()" [top]="top" [left]="left"></Button>
+
+
+    </AbsoluteLayout>
+<!--    <FlexboxLayout class="m-15">-->
+<!--        <Image [src]="image"></Image>-->
+<!--        <label [text]="location"></label>-->
+<!--        <Label class="h2" [text]="item.id + 'AA'"></Label>-->
+<!--        <Label class="h2" [text]="item.name"></Label>-->
+<!--        <label [text]="item.name + 'test'"></label>-->
+<!--        <label [text]="movementVal"></label>-->
+<!--        <label [text]="sensorVal"></label>-->
+<!--        <Button text="Button" class="btn" (tap)="onButtonTap()"></Button>-->
+<!--        <Button text="Button" class="btn primary" (tap)="cameraPerm()"></Button>-->
+<!--        <Button text="Directions" class="btn primary" (tap)="onDir()"></Button>-->
+
+<!--        <Button text="End" class="btn primary" (tap)="stopListen()"></Button>-->
+<!--    </FlexboxLayout>-->
+<!--    <Label class="h4 m-15" [text]="item.role"></Label>-->
 </FlexboxLayout>
