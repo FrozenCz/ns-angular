@@ -1,0 +1,33 @@
+<ActionBar title="Scanner - Milan Knop @ uhk 2022 - Úvod do mobilních technologií"></ActionBar>
+<ActivityIndicator [busy]="isBusy" class="activity-indicator"></ActivityIndicator>
+<GridLayout *ngIf="!isBusy" rows="auto, *, auto" backgroundColor="lightgray" flexDirection="column">
+    <flexbox-layout [justifyContent]="'space-between'" row="0">
+        <Button class="getData" text="Načist data" (tap)="getData()"></Button>
+        <Button class="setData" text="Odeslat data" (tap)="sendData()"></Button>
+    </flexbox-layout>
+    <BarcodeScanner
+            class="scanner-round"
+            formats="QR_CODE, EAN_13"
+            beepOnScan="true"
+            reportDuplicates="true"
+            preferFrontCamera="false"
+    >
+    </BarcodeScanner>
+    <flexbox-layout row="1">
+        <label text="Klikněte na tlačítko načíst data" *ngIf="barcodes.length < 1"></label>
+        <ListView class="list-group" [items]="barcodes" *ngIf="barcodes.length > 0">
+            <ng-template let-barcode="item">
+                <FlexboxLayout flexDirection="row" class="list-group-item" [justifyContent]="'space-between'">
+                    <Label [text]="barcode.name" class="list-group-item-heading" verticalAlignment="center"></Label>
+                    <Label class="foundIndicator" [ngClass]="{'founded':barcode.found}"
+                           verticalAlignment="center"></Label>
+                </FlexboxLayout>
+            </ng-template>
+        </ListView>
+    </flexbox-layout>
+    <flexbox-layout [justifyContent]="'space-between'" row="2">
+        <StackLayout></StackLayout>
+        <Button class="scan" text="Scanovat" (tap)="barcodeTest()"></Button>
+    </flexbox-layout>
+
+</GridLayout>

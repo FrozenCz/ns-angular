@@ -1,3 +1,10 @@
-<GridLayout>
-  <page-router-outlet></page-router-outlet>
+<GridLayout rows="50,*">
+  <flexbox-layout row="0">
+    <Button [text]="'kulicka'" [nsRouterLink]="['kulicka']"></Button>
+    <Button [text]="'scanner'"  [nsRouterLink]="['scanner']"></Button>
+  </flexbox-layout>
+  <GridLayout row="1">
+    <page-router-outlet></page-router-outlet>
+  </GridLayout>
+
 </GridLayout>
